@@ -58,7 +58,7 @@ migrate:install # 创建迁移存储库
 migrate:refresh # 重置并重新运行所有迁移
 migrate:reset # 回滚所有数据库迁移
 migrate:rollback # 回滚上次数据库迁移
-migrate:status# 显示每个迁移的状态
+migrate:status # 显示每个迁移的状态
 
 notifications:table # 为通知表创建迁移
 

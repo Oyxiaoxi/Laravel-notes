@@ -171,7 +171,7 @@ public function messages()
 
 + 视图引用
 ```php
-@include('layouts._message') ）：
+@include('layouts._message')
 ```
 
 #### 模型字段添加

@@ -22,6 +22,11 @@ vim ~/.zshrc
 export PATH="/Applications/MAMP/bin/php/php7.1.8/bin:$PATH:$HOME/.composer/vendor/bin/:$PATH"
 ```
 
+#### Composer 加速
+```bash
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
+```
+
 #### Install Laravel 
 ```bash
 composer global require "laravel/install"

@@ -50,10 +50,10 @@ php artisan migrate
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 | 	id   | name  | email | password | remember_token | created_at | updated_at | 
 
-| password_resets |   |    | 
+| password_resets |   |   | 
 |:----:|:----:|:----:|
 | email | token | created_at  | 
 
-| migrations |   |    | 
-|:----:|:----:|:----:|:----:|
+| migrations |   |   | 
+|:----:|:----:|:----:|
 | id | migration | batch | 

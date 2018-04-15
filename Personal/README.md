@@ -12,7 +12,7 @@ Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 
 #### 生成的资源路由列表信息
 HTTP 请求 | URI | 动作 | 作用
-----|----|----|----|----|
+----|----|----|----|
 GET|/users/{user}|UsersController@show|显示用户个人信息页面
 GET|/users/{user}/edit|UsersController@edit|显示编辑个人资料页面
 PATCH|/users/{user}|UsersController@update|处理 edit 页面提交的更改

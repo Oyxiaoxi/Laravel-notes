@@ -97,5 +97,6 @@ protected function validator(array $data)
 }
 ```
 
-> 'captcha' => 'required|captcha',
+> 'captcha' => 'required|captcha'
+
 > 表达式里的第二个 captcha 是 mews/captcha 自定义的表单验证规则。扩展包非常巧妙地利用了 Laravel 表单验证器提供的 自定义表单验证规则 功能。

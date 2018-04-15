@@ -57,3 +57,26 @@ php artisan migrate
 | migrations |   |   | 
 |:----:|:----:|:----:|
 | id | migration | batch | 
+
+#### 手动认证
+
+```php 
+use Illuminate\Support\Facades\Auth; # 头部引用 Laravel 5.6
+use Illuminate\Http\RedirectResponse; 
+
+public function login(Request $request){
+    if ($request -> isMethod('post')) {
+        $data = $request -> input();
+        // attempt 接收 $data[] 值 ，手动认证
+        if (Auth::attempt(['email'=>$data['email'], 'password'=>$data['password'], 'admin'=>'1'])) {
+            echo "Success"; die;
+        } else {
+            echo "Falied"; die;
+        }
+    }
+    return view('模板');
+}
+
+```
+
+> users 表 password 之后增加 admin 字段，默认值为 1

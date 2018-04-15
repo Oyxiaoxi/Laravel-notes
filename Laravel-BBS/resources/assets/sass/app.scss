@@ -1,4 +1,3 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
@@ -11,10 +10,11 @@
 /* universal */
 
 body {
-    font-family: "Microsoft YaHei",Hiragino Sans GB, "Hiragino Sans GB", Helvetica,Arial,sans-serif;
+    font-family: "Microsoft YaHei", Hiragino Sans GB, "Hiragino Sans GB", Helvetica, Arial, sans-serif;
 }
 
 /* header */
+
 .navbar-static-top {
     border-color: #e7e7e7;
     background-color: #fff;
@@ -25,10 +25,12 @@ body {
 }
 
 /* Sticky footer styles */
+
 html {
     position: relative;
-    min-height: 100% ;
+    min-height: 100%;
 }
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
@@ -37,19 +39,16 @@ body {
 .footer {
     position: absolute;
     bottom: 0;
-    width: 100% ;
+    width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
     background-color: #000;
-
     .container {
         padding-right: 15px;
         padding-left: 15px;
-
         p {
             margin: 19px 0;
             color: #c1c1c1;
-
             a {
                 color: inherit;
             }
@@ -58,10 +57,21 @@ body {
 }
 
 /* User register page */
+
 .register-page {
     img.captcha {
         margin-bottom: 0px;
         margin-top: 10px;
         cursor: pointer;
+    }
+}
+
+/* User profile page */
+
+.users-show-page {
+    .user-info {
+        .thumbnail {
+            margin-bottom: 0px;
+        }
     }
 }

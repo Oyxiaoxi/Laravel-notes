@@ -11,7 +11,7 @@
             <div class="panel-body">
                 <div class="media">
                     <div align="center">
-                        <img class="thumbnail img-responsive" src="https://lccdn.phphub.org/uploads/avatars/24325_1523760650.jpeg?imageView2/1/w/100/h/100" width="300px" height="300px">
+                        <img class="thumbnail img-responsive" src="{{ $user->avatar }}" width="300px" height="300px">
                     </div>
                     <div class="media-body">
                         <hr>

@@ -8353,7 +8353,7 @@ button.close {
 /* universal */
 
 body {
-  font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial,sans-serif;
+  font-family: "Microsoft YaHei",Hiragino Sans GB, "Hiragino Sans GB", Helvetica,Arial,sans-serif;
 }
 
 /* header */
@@ -8401,5 +8401,13 @@ body {
 
 .footer .container p a {
   color: inherit;
+}
+
+/* User register page */
+
+.register-page img.captcha {
+  margin-bottom: 0px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 

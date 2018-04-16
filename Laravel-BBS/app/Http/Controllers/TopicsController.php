@@ -11,10 +11,11 @@ use Auth;
 
 class TopicsController extends Controller
 {
+	// 限制未登陆用户发帖
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
+	}
 
 	public function index(Request $request, Topic $topic)
 	{

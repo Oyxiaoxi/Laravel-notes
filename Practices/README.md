@@ -341,3 +341,26 @@ Generating testing data|Seeder classes, Model Factories, Faker|Creating testing 
 类型 | 规则 | 正确示例 | 错误示例 
 ----|----|----|----|
 Controller|单数|ArticleController|<del>ArticlesController</del>
+Route|复数|articles/1|<del>article/1</del>
+Named route|带点符号的蛇形命名|users.show_active|<del>users.show-active, show-active-users</del>
+Model|单数|User|<del>Users</del>
+hasOne or belongsTo relationship|单数|articleComment|<del>articleComments, article_comment</del>
+All other relationships|复数|articleComments|<del>articleComment, article_comments</del>
+Table|复数|article_comments|<del>article_comment, articleComments</del>
+Pivot table|按字母顺序排列的单数模型名称|article_user|<del>	user_article, articles_users</del>
+Table column|带着模型名称的蛇形命名|meta_title|<del>MetaTitle; article_meta_title</del>
+Foreign key|带_id后缀的单数型号名称|article_id|<del>ArticleId, id_article, articles_id</del>
+Primary key|-|id|<del>custom_id</del>
+Migration|-|2017_01_01_000_create_xx_table|<del>2017_01_01_0000_articles</del>
+Method|小驼峰命名|getAll|<del>get_all</del>
+Method in resource controller|-|store|<del>saveArticle</del>
+Method in test class|小驼峰命名|testGuestCannotSeeArticle|<del>test_guest_cannot_see_article</del>
+Variable|小驼峰命名|$articlesWithAuthor|<del>$articles_with_author</del>
+Collection|具描述性的复数形式|$activeUsers = User::active()->get()|<del>$active, $data</del>
+Object|具描述性的单数形式|$activeUser = User::active()->first()|<del>$users, $obj</del>
+Config and language files index|蛇形命名|articles_enabled|<del>ArticlesEnabled; articles-enabled</del>
+View|蛇形命名|show_filtered.blade.php|<del>showFiltered.blade.php, show-filtered.blade.php</del>
+Config|蛇形命名|google_calendar.php|<del>googleCalendar.php, google-calendar.php</del>
+Contract (interface)|形容词或名词|Authenticatable|<del>AuthenticationInterface, IAuthentication</del>
+Trait|形容词|Notifiable|<del>NotificationTrait</del>
+

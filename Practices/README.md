@@ -364,3 +364,95 @@ Config|蛇形命名|google_calendar.php|<del>googleCalendar.php, google-calendar
 Contract (interface)|形容词或名词|Authenticatable|<del>AuthenticationInterface, IAuthentication</del>
 Trait|形容词|Notifiable|<del>NotificationTrait</del>
 
+### 尽可能使用更短、更易读的语法
+#### bad
+```php
+$request->session()->get('cart');
+$request->input('name');
+```
+
+#### great
+```php
+session('cart');
+$request->name;
+```
+
+#### 更多示例：
+通用语法 | 更短、更可读的语法 
+----|----|
+Session::get('cart')|session('cart')
+$request->session()->get('cart')|session('cart')
+Session::put('cart', $data)|session(['cart' => $data])
+$request->input('name'), Request::get('name')|$request->name, request('name')
+return Redirect::back()|return back()
+is_null($object->relation) ? $object->relation->id : null }|optional($object->relation)->id
+return view('index')->with('title', $title)->with('client', $client)|return view('index', compact('title', 'client'))
+$request->has('value') ? $request->value : 'default';|$request->get('value', 'default')
+Carbon::now(), Carbon::today()|now(), today()
+App::make('Class')|app('Class')
+->where('column', '=', 1)|->where('column', 1)
+->orderBy('created_at', 'desc')|->latest()
+->orderBy('age', 'desc')|->latest('age')
+->orderBy('created_at', 'asc')|	->oldest()
+->select('id', 'name')->get()|->get(['id', 'name'])
+->first()->name|->value('name')
+
+### 使用 IoC 容器或 facades 代替新的 Class
++ 新的 Class 语法创建类时，不仅使得类与类之间紧密耦合，还加重了测试的复杂度。推荐改用 IoC 容器或 facades。
+
+#### bad
+```php
+$user = new User;
+$user->create($request->all());
+```
+
+#### great
+```php
+public function __construct(User $user)
+{
+    $this->user = $user;
+}
+
+....
+
+$this->user->create($request->all());
+```
+
+### 不要直接从 .env 文件获取数据
++ 将数据传递给配置文件，然后使用辅助函数 config() 在应用程序中使用数据
+
+#### bad 
+```php
+$apiKey = env('API_KEY');
+```
+
+#### great
+```php
+// config/api.php
+'key' => env('API_KEY'),
+
+// Use the data
+$apiKey = config('api.key');
+```
+
+### 以标准格式存储日期，必要时就使用访问器和修改器来修改日期格式
+
+#### bad
+```php
+{{ Carbon::createFromFormat('Y-d-m H-i', $object->ordered_at)->toDateString() }}
+{{ Carbon::createFromFormat('Y-d-m H-i', $object->ordered_at)->format('m-d') }}
+```
+
+#### great
+```php
+// Model
+protected $dates = ['ordered_at', 'created_at', 'updated_at']
+public function getMonthDayAttribute($date)
+{
+    return $date->format('m-d');
+}
+
+// View
+{{ $object->ordered_at->toDateString() }}
+{{ $object->ordered_at->monthDay }}
+```

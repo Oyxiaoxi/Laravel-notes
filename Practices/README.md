@@ -340,4 +340,4 @@ Generating testing data|Seeder classes, Model Factories, Faker|Creating testing 
 
 类型 | 规则 | 正确示例 | 错误示例 
 ----|----|----|----|
-Controller|单数|ArticleController|----ArticlesController
+Controller|单数|ArticleController|<del>ArticlesController</del>

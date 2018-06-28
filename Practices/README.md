@@ -321,3 +321,23 @@ return back()->with('message', __('app.article_added'));
 部署|Laravel Forge|Deployer and other solutions
 单元测试|PHPUnit, Mockery|Phpspec
 浏览器测试|Laravel Dusk|Codeception
+数据库操作|Eloquent|SQL, Doctrine
+模板|Blade|Twig
+数据操作|Laravel collections|Arrays
+表单验证|Request classes|3rd party packages, validation in controller
+认证|Built-in|3rd party packages, your own solution
+API 认证|Laravel Passport|3rd party JWT and OAuth packages
+创建 API|Built-in|Dingo API and similar packages
+数据库结构操作|Migrations|Working with DB structure directly
+局部化|Built-in|3rd party packages
+实时用户接口|Laravel Echo, Pusher|3rd party packages and working with WebSockets directly
+Generating testing data|Seeder classes, Model Factories, Faker|Creating testing data manually
+生成测试数据|Laravel Task Scheduler|Scripts and 3rd party packages
+数据库|MySQL, PostgreSQL, SQLite, SQL Server|MongoDB
+
+### 遵循Laravel命名约定
++ 遵循 PSR 标准。 另外，请遵循 Laravel 社区接受的命名约定：
+
+类型 | 规则 | 正确示例 | 错误示例 
+----|----|----|----|
+Controller|单数|ArticleController|ArticlesController

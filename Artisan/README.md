@@ -3,7 +3,8 @@ Artisan 是 Laravel 自带的命令行接口，它为我们在开发过程中提
 ```bash 
 php artisan list # laravel 项目目录下
 php artisan help migrate # 使用帮助
-php artisan tinker # 扩展调试    
+php artisan tinker # 扩展调试
+php artisan storage:link # Laravel-admin 后台软链接    
 ```
 
 ### 自定义生成命令

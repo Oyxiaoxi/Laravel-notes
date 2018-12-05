@@ -7,7 +7,25 @@ php artisan tinker # 扩展调试
 php artisan storage:link # Laravel-admin 后台软链接    
 ```
 
+### 常用命令
+
+| Commad                                               | Parameter  | Description                               | Remarks                                                      |
+| ---------------------------------------------------- | ---------- | ----------------------------------------- | ------------------------------------------------------------ |
+| php artisan route:list                               |            | 查看路由列表                              |                                                              |
+| php artisan route:cache                              |            | 生成路由缓存                              | 一般线上操作                                                 |
+| php artisan route:clear                              |            | 清除路由缓存                              |                                                              |
+| php artisan make:model ModelNmae                     |            | 创建模型                                  |                                                              |
+| php artisan make:model ModelName                     | -m         | 一并创建迁移文件，末尾追加 -m (migration) |                                                              |
+| php artisan make:model FileName/ModelName            | -m         | 指定目录创建模型                          |                                                              |
+| php artisan make:controller IndexController          |            | 创建控制器                                |                                                              |
+| php artisan make:controller FileName/IndexController |            | 指定目录控制器                            |                                                              |
+| php artisan make:controller IndexController          | --resource | 创建带方法的控制器                        | 创建Rest风格资源控制器带有 index、create、store、edit、update、destroy、show 方法 |
+| php artisan make:middleware MiddlewareName           |            | 创建中间件                                |                                                              |
+
+
+
 ### 自定义生成命令
+
 ```bash
 # app/Console/Commands ，会被 composer 预先加载
 php artisan make:command SendEmails
@@ -89,5 +107,3 @@ vendor:publish
 
 view:cache # 编译所有应用程序的刀片模板
 ```
-
-
